@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && node scripts/generate-index.js",
-    "build:vercel": "vite build --mode production && node scripts/generate-index.js",
+    "build": "vite build",
+    "build:vercel": "vite build --mode production",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
