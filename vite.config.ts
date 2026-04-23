@@ -17,7 +17,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: ".output/public",
+    outDir: "dist",
     emptyOutDir: true,
     sourcemap: false,
     minify: "terser",
@@ -31,7 +31,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ["react", "react-dom"],
-          router: ["@tanstack/react-router", "@tanstack/react-start"],
+          router: ["@tanstack/react-router"],
           ui: [
             "@radix-ui/react-dialog",
             "@radix-ui/react-dropdown-menu",
