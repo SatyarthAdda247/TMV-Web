@@ -26,12 +26,10 @@ const PRINCIPLES = [
 ];
 
 const TEAM = [
-  { name: "Raman Singh", role: "Founder, Director", bio: "Started TMV in 2015 after a decade directing commercials. Obsessed with first frames.", img: liveImg },
-  { name: "Mira Patel", role: "Creative Director", bio: "Documentary roots, animation heart. Leads originals and long form storytelling.", img: animImg },
-  { name: "Tara Menon", role: "VFX Supervisor", bio: "Photoreal everything. Spent eight years in feature VFX before joining the studio.", img: vfxImg },
-  { name: "Hari Krishnan", role: "Director of Photography", bio: "Light, weather, patience. Has shot in deserts, monsoons and one active volcano.", img: liveImg },
-  { name: "Aisha Verma", role: "Lead Animator", bio: "Hand drawn 2D specialist with a soft spot for character work and old paper textures.", img: animImg },
-  { name: "Sara Iqbal", role: "Executive Producer", bio: "Keeps the trains running. Believes great work and great timelines are not mutually exclusive.", img: vfxImg },
+  { name: "Divay", role: "Founder, TMV", bio: "The vision behind TMV. Built the studio from the ground up with a belief that Indian storytelling deserves world-class production.", img: liveImg },
+  { name: "Raman Singh", role: "Director", bio: "Leads direction across TMV's commercial and original projects. Known for his eye for detail and instinct for the unexpected frame.", img: animImg },
+  { name: "Ujjwal", role: "Head of Growth", bio: "Drives TMV's reach and partnerships. Connects the studio's creative output with the audiences and brands that need it most.", img: vfxImg },
+  { name: "Hemanya Dua", role: "Leading Horror Content", bio: "The creative force behind Khooni Monday. Hemanya brings India's horror tradition to life with every episode she leads.", img: liveImg },
 ];
 
 function About() {

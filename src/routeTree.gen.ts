@@ -14,6 +14,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as OriginalsRouteImport } from './routes/originals'
+import { Route as KhooniMondayRouteImport } from './routes/khooni-monday'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
@@ -39,6 +40,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KhooniMondayRoute = KhooniMondayRouteImport.update({
+  id: '/khooni-monday',
+  path: '/khooni-monday',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OriginalsRoute = OriginalsRouteImport.update({
@@ -80,6 +86,7 @@ const PortfolioAnimationRoute = PortfolioAnimationRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/khooni-monday': typeof KhooniMondayRoute
   '/originals': typeof OriginalsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/khooni-monday': typeof KhooniMondayRoute
   '/originals': typeof OriginalsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/khooni-monday': typeof KhooniMondayRoute
   '/originals': typeof OriginalsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/khooni-monday'
     | '/originals'
     | '/portfolio'
     | '/privacy'
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/khooni-monday'
     | '/originals'
     | '/portfolio'
     | '/privacy'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/khooni-monday'
     | '/originals'
     | '/portfolio'
     | '/privacy'
@@ -162,6 +174,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  KhooniMondayRoute: typeof KhooniMondayRoute
   OriginalsRoute: typeof OriginalsRoute
   PortfolioRoute: typeof PortfolioRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -201,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/portfolio'
       fullPath: '/portfolio'
       preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/khooni-monday': {
+      id: '/khooni-monday'
+      path: '/khooni-monday'
+      fullPath: '/khooni-monday'
+      preLoaderRoute: typeof KhooniMondayRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/originals': {
@@ -258,6 +278,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  KhooniMondayRoute: KhooniMondayRoute,
   OriginalsRoute: OriginalsRoute,
   PortfolioRoute: PortfolioRoute,
   PrivacyRoute: PrivacyRoute,

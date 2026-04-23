@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Play } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Play, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import animImg from "@/assets/cat-animation.jpg";
 import liveImg from "@/assets/cat-liveaction.jpg";
@@ -8,34 +8,29 @@ import { SectionReveal } from "@/components/SectionReveal";
 import { VideoModal } from "@/components/VideoModal";
 
 export const Route = createFileRoute("/originals")({
-  head: () => ({
-    meta: [
-      { title: "Originals, TMV Studios" },
-      { name: "description", content: "Original short films and series produced by TMV Studios." },
-      { property: "og:title", content: "Originals, TMV Studios" },
-      { property: "og:description", content: "Stories we couldn't wait to be hired to tell." },
-      { property: "og:image", content: animImg },
-    ],
-  }),
   component: Originals,
 });
 
 const ORIGINALS = [
+  {
+    title: "Khooni Monday",
+    type: "Horror Anthology Series",
+    year: "Ongoing",
+    img: vfxImg,
+    desc: "India's weekly horror anthology. New story, new dread, every Monday.",
+    videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
+    channelUrl: "https://www.youtube.com/channel/UCz67TNWBqU38S8VRvjDO2wg",
+    slug: "/khooni-monday",
+  },
   {
     title: "Paper Lanterns",
     type: "Short Film, 12 min",
     year: "2024",
     img: animImg,
     desc: "A grandmother's last festival, told one paper lantern at a time.",
-    videoUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ",
-  },
-  {
-    title: "Static",
-    type: "Series, 6 episodes",
-    year: "2023",
-    img: vfxImg,
-    desc: "Six strangers, one frequency, an entire city listening.",
-    videoUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    channelUrl: null,
+    slug: null,
   },
   {
     title: "Salt Roads",
@@ -43,7 +38,9 @@ const ORIGINALS = [
     year: "2023",
     img: liveImg,
     desc: "A road trip along India's forgotten salt routes.",
-    videoUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    channelUrl: null,
+    slug: null,
   },
 ];
 
@@ -103,13 +100,33 @@ function Originals() {
                     {o.title}
                   </h2>
                   <p className="mt-4 text-lg text-foreground/70">{o.desc}</p>
-                  <button
-                    type="button"
-                    onClick={() => setActive(o)}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-display uppercase tracking-wider text-primary hover:underline"
-                  >
-                    Watch the film
-                  </button>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setActive(o)}
+                      className="inline-flex items-center gap-2 text-sm font-display uppercase tracking-wider text-primary hover:underline"
+                    >
+                      Watch the film
+                    </button>
+                    {o.slug && (
+                      <Link
+                        to={o.slug as "/khooni-monday"}
+                        className="inline-flex items-center gap-2 text-sm font-display uppercase tracking-wider text-foreground/60 hover:text-primary transition-colors"
+                      >
+                        Explore series <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    )}
+                    {o.channelUrl && (
+                      <a
+                        href={o.channelUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="inline-flex items-center gap-2 text-sm font-display uppercase tracking-wider text-foreground/60 hover:text-primary transition-colors"
+                      >
+                        YouTube channel <ArrowRight className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             </SectionReveal>
