@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Product Management Team" />
+  <title>Product Requirements Document</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Product Requirements Document</h1>
+<p class="subtitle">TMV Studios Website</p>
+<p class="author">Product Management Team</p>
+<p class="date">April 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#executive-summary" id="toc-executive-summary">Executive
+Summary</a></li>
+<li><a href="#product-overview" id="toc-product-overview">1. Product
+Overview</a>
+<ul>
+<li><a href="#product-information" id="toc-product-information">1.1
+Product Information</a></li>
+<li><a href="#business-context" id="toc-business-context">1.2 Business
+Context</a></li>
+<li><a href="#brand-identity" id="toc-brand-identity">1.3 Brand
+Identity</a></li>
+</ul></li>
+<li><a href="#target-audience" id="toc-target-audience">2. Target
+Audience</a>
+<ul>
+<li><a href="#primary-persona-creative-directorproducer"
+id="toc-primary-persona-creative-directorproducer">2.1 Primary Persona:
+Creative Director/Producer</a></li>
+<li><a href="#secondary-persona-marketing-manager"
+id="toc-secondary-persona-marketing-manager">2.2 Secondary Persona:
+Marketing Manager</a></li>
+<li><a href="#tertiary-persona-industry-professional"
+id="toc-tertiary-persona-industry-professional">2.3 Tertiary Persona:
+Industry Professional</a></li>
+</ul></li>
+<li><a href="#core-features-and-requirements"
+id="toc-core-features-and-requirements">3. Core Features and
+Requirements</a>
+<ul>
+<li><a href="#navigation-and-information-architecture"
+id="toc-navigation-and-information-architecture">3.1 Navigation and
+Information Architecture</a>
+<ul>
+<li><a href="#site-structure" id="toc-site-structure">3.1.1 Site
+Structure</a></li>
+<li><a href="#navigation-requirements"
+id="toc-navigation-requirements">3.1.2 Navigation Requirements</a></li>
+</ul></li>
+<li><a href="#homepage" id="toc-homepage">3.2 Homepage</a>
+<ul>
+<li><a href="#hero-section" id="toc-hero-section">3.2.1 Hero
+Section</a></li>
+<li><a href="#content-sections" id="toc-content-sections">3.2.2 Content
+Sections</a></li>
+</ul></li>
+<li><a href="#portfolio-section" id="toc-portfolio-section">3.3
+Portfolio Section</a>
+<ul>
+<li><a href="#portfolio-grid" id="toc-portfolio-grid">3.3.1 Portfolio
+Grid</a></li>
+<li><a href="#project-detail-view" id="toc-project-detail-view">3.3.2
+Project Detail View</a></li>
+</ul></li>
+<li><a href="#services-page" id="toc-services-page">3.4 Services
+Page</a></li>
+<li><a href="#originals-section" id="toc-originals-section">3.5
+Originals Section</a></li>
+<li><a href="#about-us-page" id="toc-about-us-page">3.6 About Us
+Page</a></li>
+<li><a href="#contact-and-communication"
+id="toc-contact-and-communication">3.7 Contact and
+Communication</a></li>
+</ul></li>
+<li><a href="#design-requirements" id="toc-design-requirements">4.
+Design Requirements</a>
+<ul>
+<li><a href="#visual-design-system" id="toc-visual-design-system">4.1
+Visual Design System</a>
+<ul>
+<li><a href="#color-palette" id="toc-color-palette">4.1.1 Color
+Palette</a></li>
+<li><a href="#typography" id="toc-typography">4.1.2 Typography</a></li>
+<li><a href="#layout-and-spacing" id="toc-layout-and-spacing">4.1.3
+Layout and Spacing</a></li>
+<li><a href="#component-styles" id="toc-component-styles">4.1.4
+Component Styles</a></li>
+</ul></li>
+<li><a href="#responsive-design" id="toc-responsive-design">4.2
+Responsive Design</a>
+<ul>
+<li><a href="#breakpoints" id="toc-breakpoints">4.2.1
+Breakpoints</a></li>
+<li><a href="#responsive-behavior" id="toc-responsive-behavior">4.2.2
+Responsive Behavior</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#user-experience-requirements"
+id="toc-user-experience-requirements">5. User Experience
+Requirements</a>
+<ul>
+<li><a href="#performance-requirements"
+id="toc-performance-requirements">5.1 Performance Requirements</a>
+<ul>
+<li><a href="#load-time-targets" id="toc-load-time-targets">5.1.1 Load
+Time Targets</a></li>
+<li><a href="#performance-optimization"
+id="toc-performance-optimization">5.1.2 Performance
+Optimization</a></li>
+</ul></li>
+<li><a href="#accessibility-requirements"
+id="toc-accessibility-requirements">5.2 Accessibility Requirements</a>
+<ul>
+<li><a href="#wcag-2.1-compliance" id="toc-wcag-2.1-compliance">5.2.1
+WCAG 2.1 Compliance</a></li>
+<li><a href="#assistive-technology-support"
+id="toc-assistive-technology-support">5.2.2 Assistive Technology
+Support</a></li>
+</ul></li>
+<li><a href="#mobile-experience" id="toc-mobile-experience">5.3 Mobile
+Experience</a>
+<ul>
+<li><a href="#mobile-specific-requirements"
+id="toc-mobile-specific-requirements">5.3.1 Mobile-Specific
+Requirements</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#content-requirements" id="toc-content-requirements">6.
+Content Requirements</a>
+<ul>
+<li><a href="#homepage-content" id="toc-homepage-content">6.1 Homepage
+Content</a></li>
+<li><a href="#portfolio-content" id="toc-portfolio-content">6.2
+Portfolio Content</a></li>
+<li><a href="#services-content" id="toc-services-content">6.3 Services
+Content</a></li>
+<li><a href="#about-us-content" id="toc-about-us-content">6.4 About Us
+Content</a></li>
+<li><a href="#seo-and-metadata" id="toc-seo-and-metadata">6.5 SEO and
+Metadata</a></li>
+</ul></li>
+<li><a href="#success-metrics-and-kpis"
+id="toc-success-metrics-and-kpis">7. Success Metrics and KPIs</a>
+<ul>
+<li><a href="#business-metrics" id="toc-business-metrics">7.1 Business
+Metrics</a></li>
+<li><a href="#technical-metrics" id="toc-technical-metrics">7.2
+Technical Metrics</a></li>
+<li><a href="#user-satisfaction-metrics"
+id="toc-user-satisfaction-metrics">7.3 User Satisfaction
+Metrics</a></li>
+</ul></li>
+<li><a href="#technical-constraints" id="toc-technical-constraints">8.
+Technical Constraints</a>
+<ul>
+<li><a href="#platform-constraints" id="toc-platform-constraints">8.1
+Platform Constraints</a></li>
+<li><a href="#browser-support" id="toc-browser-support">8.2 Browser
+Support</a></li>
+<li><a href="#third-party-dependencies"
+id="toc-third-party-dependencies">8.3 Third-Party Dependencies</a></li>
+</ul></li>
+<li><a href="#security-and-compliance"
+id="toc-security-and-compliance">9. Security and Compliance</a>
+<ul>
+<li><a href="#security-requirements" id="toc-security-requirements">9.1
+Security Requirements</a></li>
+<li><a href="#privacy-and-data-protection"
+id="toc-privacy-and-data-protection">9.2 Privacy and Data
+Protection</a></li>
+<li><a href="#legal-requirements" id="toc-legal-requirements">9.3 Legal
+Requirements</a></li>
+</ul></li>
+<li><a href="#project-timeline-and-phases"
+id="toc-project-timeline-and-phases">10. Project Timeline and Phases</a>
+<ul>
+<li><a href="#phase-1-planning-and-design-weeks-1-2"
+id="toc-phase-1-planning-and-design-weeks-1-2">10.1 Phase 1: Planning
+and Design (Weeks 1-2)</a></li>
+<li><a href="#phase-2-development-weeks-3-6"
+id="toc-phase-2-development-weeks-3-6">10.2 Phase 2: Development (Weeks
+3-6)</a></li>
+<li><a href="#phase-3-testing-and-qa-weeks-7-8"
+id="toc-phase-3-testing-and-qa-weeks-7-8">10.3 Phase 3: Testing and QA
+(Weeks 7-8)</a></li>
+<li><a href="#phase-4-launch-week-9" id="toc-phase-4-launch-week-9">10.4
+Phase 4: Launch (Week 9)</a></li>
+<li><a href="#phase-5-post-launch-ongoing"
+id="toc-phase-5-post-launch-ongoing">10.5 Phase 5: Post-Launch
+(Ongoing)</a></li>
+</ul></li>
+<li><a href="#risks-and-mitigation" id="toc-risks-and-mitigation">11.
+Risks and Mitigation</a>
+<ul>
+<li><a href="#technical-risks" id="toc-technical-risks">11.1 Technical
+Risks</a></li>
+<li><a href="#business-risks" id="toc-business-risks">11.2 Business
+Risks</a></li>
+<li><a href="#user-experience-risks" id="toc-user-experience-risks">11.3
+User Experience Risks</a></li>
+</ul></li>
+<li><a href="#future-enhancements" id="toc-future-enhancements">12.
+Future Enhancements</a>
+<ul>
+<li><a href="#phase-2-features-3-6-months-post-launch"
+id="toc-phase-2-features-3-6-months-post-launch">12.1 Phase 2 Features
+(3-6 months post-launch)</a></li>
+<li><a href="#phase-3-features-6-12-months-post-launch"
+id="toc-phase-3-features-6-12-months-post-launch">12.2 Phase 3 Features
+(6-12 months post-launch)</a></li>
+<li><a href="#long-term-vision-12-months"
+id="toc-long-term-vision-12-months">12.3 Long-Term Vision (12+
+months)</a></li>
+</ul></li>
+<li><a href="#appendices" id="toc-appendices">13. Appendices</a>
+<ul>
+<li><a href="#glossary" id="toc-glossary">13.1 Glossary</a></li>
+<li><a href="#references" id="toc-references">13.2 References</a></li>
+<li><a href="#document-history" id="toc-document-history">13.3 Document
+History</a></li>
+<li><a href="#approval" id="toc-approval">13.4 Approval</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="executive-summary">Executive Summary</h1>
+<p>This Product Requirements Document (PRD) outlines the specifications,
+features, and requirements for the TMV Studios corporate website. TMV
+Studios is a creative production company specializing in animation, live
+action shoots, visual effects (VFX), and computer-generated imagery
+(CGI).</p>
+<p><strong>Project Objective:</strong> Create a professional, engaging
+digital presence that showcases TMV Studios’ creative capabilities and
+facilitates client acquisition.</p>
+<p><strong>Target Launch:</strong> Q2 2026</p>
+<p><strong>Key Stakeholders:</strong> - Product Management Team -
+Creative Director - Development Team - Marketing Department - Executive
+Leadership</p>
+<hr />
+<h1 id="product-overview">1. Product Overview</h1>
+<h2 id="product-information">1.1 Product Information</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Attribute</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product Name</td>
+<td>TMV Studios Website</td>
+</tr>
+<tr>
+<td>Product Type</td>
+<td>Corporate Portfolio Website</td>
+</tr>
+<tr>
+<td>Platform</td>
+<td>Web (Responsive)</td>
+</tr>
+<tr>
+<td>Primary Domain</td>
+<td>www.themadvirus.com</td>
+</tr>
+<tr>
+<td>Technology Stack</td>
+<td>Google Sites Platform</td>
+</tr>
+</tbody>
+</table>
+<h2 id="business-context">1.2 Business Context</h2>
+<p>TMV Studios requires a digital platform to:</p>
+<ul>
+<li>Showcase portfolio of completed projects</li>
+<li>Communicate service offerings to potential clients</li>
+<li>Establish brand presence in the creative industry</li>
+<li>Generate qualified leads and business inquiries</li>
+<li>Display original content and productions</li>
+</ul>
+<h2 id="brand-identity">1.3 Brand Identity</h2>
+<p><strong>Company Tagline:</strong> <em>“Everything you can imagine is
+real”</em></p>
+<p><strong>Brand Values:</strong> - Creativity and Innovation -
+Technical Excellence - Client-Centric Approach - Quality Craftsmanship -
+Imaginative Storytelling</p>
+<p><strong>Visual Identity:</strong> - Primary Brand Color: Bright Green
+(#54FF85) - Design Aesthetic: Modern, Clean, Professional - Typography:
+Bold, Contemporary, Readable</p>
+<hr />
+<h1 id="target-audience">2. Target Audience</h1>
+<h2 id="primary-persona-creative-directorproducer">2.1 Primary Persona:
+Creative Director/Producer</h2>
+<p><strong>Demographics:</strong> - Age Range: 30-50 years - Industry:
+Film, Television, Advertising, Digital Media - Role: Decision-maker for
+production partnerships - Location: Urban centers, major markets</p>
+<p><strong>Goals:</strong> - Identify qualified production studios for
+upcoming projects - Assess technical capabilities and creative style -
+Evaluate portfolio quality and relevance - Establish initial contact
+with potential partners</p>
+<p><strong>Pain Points:</strong> - Time-consuming research process -
+Difficulty assessing studio capabilities online - Unclear pricing and
+process information - Limited portfolio visibility</p>
+<p><strong>User Journey:</strong> 1. Discover TMV Studios through search
+or referral 2. Review portfolio to assess quality and style 3. Explore
+service offerings and capabilities 4. Contact studio for project
+discussion</p>
+<h2 id="secondary-persona-marketing-manager">2.2 Secondary Persona:
+Marketing Manager</h2>
+<p><strong>Demographics:</strong> - Age Range: 25-45 years - Industry:
+Corporate Marketing, Brand Management - Role: Campaign planning and
+vendor selection - Budget Authority: Medium to High</p>
+<p><strong>Goals:</strong> - Find creative solutions for brand campaigns
+- Explore innovative content formats - Identify reliable production
+partners - Stay within budget constraints</p>
+<p><strong>Pain Points:</strong> - Unclear service specializations -
+Difficulty comparing capabilities - Limited case study information -
+Uncertain turnaround times</p>
+<h2 id="tertiary-persona-industry-professional">2.3 Tertiary Persona:
+Industry Professional</h2>
+<p><strong>Demographics:</strong> - Age Range: 20-60 years - Industry:
+Creative professionals, collaborators - Role: Networking, partnership
+opportunities - Interest: Industry trends and original content</p>
+<p><strong>Goals:</strong> - Learn about TMV Studios’ work and approach
+- Explore original content productions - Identify collaboration
+opportunities - Stay informed about industry developments</p>
+<hr />
+<h1 id="core-features-and-requirements">3. Core Features and
+Requirements</h1>
+<h2 id="navigation-and-information-architecture">3.1 Navigation and
+Information Architecture</h2>
+<h3 id="site-structure">3.1.1 Site Structure</h3>
+<pre><code>Home
+├── Portfolio
+│   ├── Animation
+│   ├── Live Action Shoots
+│   └── VFX and CGI
+├── Originals
+├── Our Services
+└── About Us</code></pre>
+<h3 id="navigation-requirements">3.1.2 Navigation Requirements</h3>
+<p><strong>Functional Requirements:</strong> - FR-NAV-001: Responsive
+navigation menu adapting to screen size - FR-NAV-002: Hamburger menu for
+mobile devices (&lt; 768px width) - FR-NAV-003: Dropdown menus for
+multi-level navigation - FR-NAV-004: Active page indicator in navigation
+- FR-NAV-005: Search functionality for content discovery - FR-NAV-006:
+Sticky header appearing on scroll - FR-NAV-007: Logo click returns to
+homepage</p>
+<p><strong>Non-Functional Requirements:</strong> - NFR-NAV-001:
+Navigation response time &lt; 100ms - NFR-NAV-002: Touch targets minimum
+44x44 pixels - NFR-NAV-003: Keyboard navigation support - NFR-NAV-004:
+ARIA labels for accessibility</p>
+<h2 id="homepage">3.2 Homepage</h2>
+<h3 id="hero-section">3.2.1 Hero Section</h3>
+<p><strong>User Story:</strong> <em>As a first-time visitor, I want to
+immediately understand what TMV Studios does so I can determine if their
+services match my needs.</em></p>
+<p><strong>Requirements:</strong> - FR-HOME-001: Full-width hero section
+with background image - FR-HOME-002: Overlay effect with 50% opacity -
+FR-HOME-003: Primary headline: “WELCOME TO TMV” - FR-HOME-004: Secondary
+headline: “Everything you can imagine is real” - FR-HOME-005:
+Call-to-action button: “Discover More” - FR-HOME-006: Responsive text
+sizing across devices - FR-HOME-007: Image optimization for fast
+loading</p>
+<p><strong>Acceptance Criteria:</strong> - Hero section loads within 2
+seconds - Text remains readable on all devices - CTA button is clearly
+visible and clickable - Background image maintains quality across
+resolutions</p>
+<h3 id="content-sections">3.2.2 Content Sections</h3>
+<p><strong>Requirements:</strong> - FR-HOME-008: Brief company
+introduction - FR-HOME-009: Featured portfolio highlights - FR-HOME-010:
+Service overview with links - FR-HOME-011: Client testimonials (if
+available) - FR-HOME-012: Contact call-to-action</p>
+<h2 id="portfolio-section">3.3 Portfolio Section</h2>
+<h3 id="portfolio-grid">3.3.1 Portfolio Grid</h3>
+<p><strong>User Story:</strong> <em>As a potential client, I want to
+view TMV’s previous work so I can assess their capabilities and creative
+style.</em></p>
+<p><strong>Requirements:</strong> - FR-PORT-001: Portfolio organized by
+category (Animation, Live Action, VFX/CGI) - FR-PORT-002: Grid layout
+with responsive columns - FR-PORT-003: High-quality project thumbnails -
+FR-PORT-004: Hover effects revealing project information - FR-PORT-005:
+Click to view full project details - FR-PORT-006: Filtering by category
+- FR-PORT-007: Lazy loading for images - FR-PORT-008: Project metadata
+(title, category, year)</p>
+<p><strong>Acceptance Criteria:</strong> - Portfolio loads progressively
+as user scrolls - Images maintain aspect ratio across devices -
+Filtering transitions are smooth (&lt; 300ms) - All projects are
+accessible via keyboard navigation</p>
+<h3 id="project-detail-view">3.3.2 Project Detail View</h3>
+<p><strong>Requirements:</strong> - FR-PORT-009: Full-screen project
+view or modal - FR-PORT-010: High-resolution images/videos -
+FR-PORT-011: Project description and details - FR-PORT-012: Client name
+(if permitted) - FR-PORT-013: Technologies/techniques used -
+FR-PORT-014: Navigation to next/previous project - FR-PORT-015:
+Close/back functionality</p>
+<h2 id="services-page">3.4 Services Page</h2>
+<p><strong>User Story:</strong> <em>As a potential client, I want to
+understand what services TMV offers so I can determine if they can
+fulfill my project needs.</em></p>
+<p><strong>Requirements:</strong> - FR-SERV-001: Comprehensive service
+descriptions - FR-SERV-002: Service categories clearly defined -
+FR-SERV-003: Process overview or workflow - FR-SERV-004: Technology and
+tools information - FR-SERV-005: Case studies or examples - FR-SERV-006:
+FAQ section - FR-SERV-007: Contact CTA for inquiries</p>
+<h2 id="originals-section">3.5 Originals Section</h2>
+<p><strong>User Story:</strong> <em>As an industry professional, I want
+to explore TMV’s original productions so I can understand their creative
+vision and capabilities.</em></p>
+<p><strong>Requirements:</strong> - FR-ORIG-001: Showcase of original
+content - FR-ORIG-002: Project descriptions and background -
+FR-ORIG-003: Behind-the-scenes content (if available) - FR-ORIG-004:
+Links to view/stream content - FR-ORIG-005: Awards or recognition (if
+applicable)</p>
+<h2 id="about-us-page">3.6 About Us Page</h2>
+<p><strong>Requirements:</strong> - FR-ABOUT-001: Company history and
+mission statement - FR-ABOUT-002: Team information and profiles -
+FR-ABOUT-003: Awards and recognition - FR-ABOUT-004: Client testimonials
+- FR-ABOUT-005: Company values and culture - FR-ABOUT-006: Office
+location/contact information</p>
+<h2 id="contact-and-communication">3.7 Contact and Communication</h2>
+<p><strong>User Story:</strong> <em>As an interested client, I want to
+easily contact TMV Studios so I can discuss my project
+requirements.</em></p>
+<p><strong>Requirements:</strong> - FR-CONT-001: Email address:
+raman@themadvirus.com - FR-CONT-002: Phone number: +91-844-751-4242 -
+FR-CONT-003: LinkedIn profile link - FR-CONT-004: Contact form
+(optional) - FR-CONT-005: Footer with persistent contact information -
+FR-CONT-006: Clickable email and phone links - FR-CONT-007: Response
+time expectations</p>
+<p><strong>Acceptance Criteria:</strong> - Contact information visible
+on every page - Email/phone links open appropriate applications -
+Contact form validates input (if implemented) - Confirmation message
+after form submission</p>
+<hr />
+<h1 id="design-requirements">4. Design Requirements</h1>
+<h2 id="visual-design-system">4.1 Visual Design System</h2>
+<h3 id="color-palette">4.1.1 Color Palette</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Color Name</strong></th>
+<th><strong>Hex Code</strong></th>
+<th><strong>RGB</strong></th>
+<th><strong>Usage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary White</td>
+<td>#FFFFFF</td>
+<td>255, 255, 255</td>
+<td>Backgrounds, text on dark</td>
+</tr>
+<tr>
+<td>Primary Black</td>
+<td>#000000</td>
+<td>0, 0, 0</td>
+<td>Text, borders</td>
+</tr>
+<tr>
+<td>Accent Green</td>
+<td>#54FF85</td>
+<td>84, 255, 133</td>
+<td>CTAs, highlights, brand</td>
+</tr>
+<tr>
+<td>Light Gray</td>
+<td>#F7F7F7</td>
+<td>247, 247, 247</td>
+<td>Section backgrounds</td>
+</tr>
+<tr>
+<td>Medium Gray</td>
+<td>#F4F4F4</td>
+<td>244, 244, 244</td>
+<td>Alternate backgrounds</td>
+</tr>
+<tr>
+<td>Dark Gray</td>
+<td>#1F1F1F</td>
+<td>31, 31, 31</td>
+<td>Headings, primary text</td>
+</tr>
+<tr>
+<td>Text Medium</td>
+<td>#212121</td>
+<td>33, 33, 33</td>
+<td>Body text</td>
+</tr>
+</tbody>
+</table>
+<h3 id="typography">4.1.2 Typography</h3>
+<p><strong>Font Families:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Purpose</strong></th>
+<th><strong>Font Family</strong></th>
+<th><strong>Weights</strong></th>
+<th><strong>Usage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headings</td>
+<td>Oswald</td>
+<td>400, 600, 700</td>
+<td>H1-H6, navigation</td>
+</tr>
+<tr>
+<td>Body Text</td>
+<td>Open Sans</td>
+<td>400, 600, 700</td>
+<td>Paragraphs, descriptions</td>
+</tr>
+<tr>
+<td>Accent</td>
+<td>Comfortaa</td>
+<td>400, 700</td>
+<td>Special elements, quotes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Type Scale:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Element</strong></th>
+<th><strong>Desktop Size</strong></th>
+<th><strong>Mobile Size</strong></th>
+<th><strong>Line Height</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hero Title</td>
+<td>60pt</td>
+<td>39pt</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>H1</td>
+<td>48pt</td>
+<td>32pt</td>
+<td>1.23</td>
+</tr>
+<tr>
+<td>H2</td>
+<td>38pt</td>
+<td>26pt</td>
+<td>1.42</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>29pt</td>
+<td>22pt</td>
+<td>1.42</td>
+</tr>
+<tr>
+<td>Body</td>
+<td>13pt</td>
+<td>13pt</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>Small</td>
+<td>12pt</td>
+<td>12pt</td>
+<td>1.88</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layout-and-spacing">4.1.3 Layout and Spacing</h3>
+<p><strong>Grid System:</strong> - Maximum content width: 1280px -
+Column count: 12-column grid - Gutter width: 24px - Margin: 16px
+(mobile), 32px (tablet), 48px (desktop)</p>
+<p><strong>Spacing Scale:</strong> - XS: 4px - S: 8px - M: 16px - L:
+24px - XL: 32px - XXL: 48px - XXXL: 64px</p>
+<h3 id="component-styles">4.1.4 Component Styles</h3>
+<p><strong>Buttons:</strong> - Primary: Green background (#54FF85),
+black text - Secondary: White background, black border, black text -
+Ghost: Transparent background, white text - Minimum height: 44px -
+Padding: 16px 32px - Border radius: 2px - Hover: Opacity 0.8 or scale
+1.05</p>
+<p><strong>Cards:</strong> - Background: White - Border: None or 1px
+solid #E0E0E0 - Shadow: 0 2px 8px rgba(0,0,0,0.1) - Border radius: 4px -
+Padding: 24px</p>
+<h2 id="responsive-design">4.2 Responsive Design</h2>
+<h3 id="breakpoints">4.2.1 Breakpoints</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Breakpoint</strong></th>
+<th><strong>Width Range</strong></th>
+<th><strong>Device Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobile</td>
+<td>0 - 479px</td>
+<td>Smartphones</td>
+</tr>
+<tr>
+<td>Tablet</td>
+<td>480px - 767px</td>
+<td>Tablets (portrait)</td>
+</tr>
+<tr>
+<td>Desktop</td>
+<td>768px - 1279px</td>
+<td>Tablets (landscape), small laptops</td>
+</tr>
+<tr>
+<td>Wide</td>
+<td>1280px+</td>
+<td>Desktop, large screens</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responsive-behavior">4.2.2 Responsive Behavior</h3>
+<p><strong>Navigation:</strong> - Mobile: Hamburger menu, full-screen
+overlay - Tablet: Condensed horizontal menu - Desktop: Full horizontal
+menu with dropdowns</p>
+<p><strong>Content Layout:</strong> - Mobile: Single column, stacked
+elements - Tablet: 2-column grid where appropriate - Desktop: 3-4 column
+grid, side-by-side layouts</p>
+<p><strong>Images:</strong> - Responsive sizing with srcset - Maintain
+aspect ratios - Lazy loading below fold - WebP format with JPEG
+fallback</p>
+<hr />
+<h1 id="user-experience-requirements">5. User Experience
+Requirements</h1>
+<h2 id="performance-requirements">5.1 Performance Requirements</h2>
+<h3 id="load-time-targets">5.1.1 Load Time Targets</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Metric</strong></th>
+<th><strong>Target</strong></th>
+<th><strong>Measurement</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First Contentful Paint</td>
+<td>&lt; 1.5s</td>
+<td>Time to first visible content</td>
+</tr>
+<tr>
+<td>Largest Contentful Paint</td>
+<td>&lt; 2.5s</td>
+<td>Time to main content visible</td>
+</tr>
+<tr>
+<td>Time to Interactive</td>
+<td>&lt; 3.5s</td>
+<td>Time until page is fully interactive</td>
+</tr>
+<tr>
+<td>Total Page Load</td>
+<td>&lt; 3.0s</td>
+<td>Complete page load time</td>
+</tr>
+<tr>
+<td>First Input Delay</td>
+<td>&lt; 100ms</td>
+<td>Response to first user interaction</td>
+</tr>
+</tbody>
+</table>
+<h3 id="performance-optimization">5.1.2 Performance Optimization</h3>
+<p><strong>Requirements:</strong> - NFR-PERF-001: Image optimization
+(WebP, compression) - NFR-PERF-002: Lazy loading for below-fold content
+- NFR-PERF-003: Minified CSS and JavaScript - NFR-PERF-004: Browser
+caching for static assets - NFR-PERF-005: CDN delivery for global
+performance - NFR-PERF-006: Responsive images with appropriate sizes</p>
+<p><strong>Acceptance Criteria:</strong> - Lighthouse Performance Score
+&gt; 90 - Mobile Performance Score &gt; 85 - Page size &lt; 2MB (initial
+load) - &lt; 50 HTTP requests per page</p>
+<h2 id="accessibility-requirements">5.2 Accessibility Requirements</h2>
+<h3 id="wcag-2.1-compliance">5.2.1 WCAG 2.1 Compliance</h3>
+<p><strong>Level AA Compliance Required:</strong></p>
+<ul>
+<li>NFR-A11Y-001: Semantic HTML5 elements</li>
+<li>NFR-A11Y-002: ARIA labels for interactive elements</li>
+<li>NFR-A11Y-003: Keyboard navigation support (Tab, Enter, Escape)</li>
+<li>NFR-A11Y-004: Visible focus indicators</li>
+<li>NFR-A11Y-005: Skip navigation links</li>
+<li>NFR-A11Y-006: Alt text for all images</li>
+<li>NFR-A11Y-007: Color contrast ratio ≥ 4.5:1 for normal text</li>
+<li>NFR-A11Y-008: Color contrast ratio ≥ 3:1 for large text</li>
+<li>NFR-A11Y-009: Responsive text sizing (no fixed pixels)</li>
+<li>NFR-A11Y-010: Screen reader compatibility</li>
+<li>NFR-A11Y-011: Form labels and error messages</li>
+<li>NFR-A11Y-012: Heading hierarchy (H1-H6)</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong> - WAVE accessibility tool: 0
+errors - axe DevTools: 0 violations - Lighthouse Accessibility Score:
+100 - Screen reader tested (NVDA, JAWS, VoiceOver) - Keyboard-only
+navigation functional</p>
+<h3 id="assistive-technology-support">5.2.2 Assistive Technology
+Support</h3>
+<p><strong>Supported Technologies:</strong> - Screen readers (NVDA,
+JAWS, VoiceOver) - Keyboard-only navigation - Voice control software -
+Screen magnification - High contrast mode</p>
+<h2 id="mobile-experience">5.3 Mobile Experience</h2>
+<h3 id="mobile-specific-requirements">5.3.1 Mobile-Specific
+Requirements</h3>
+<ul>
+<li>NFR-MOB-001: Touch-friendly interface (44px minimum touch
+targets)</li>
+<li>NFR-MOB-002: Responsive images and videos</li>
+<li>NFR-MOB-003: Mobile-optimized navigation</li>
+<li>NFR-MOB-004: Fast mobile load times (&lt; 3s on 3G)</li>
+<li>NFR-MOB-005: Gesture support (swipe, pinch-to-zoom)</li>
+<li>NFR-MOB-006: Viewport meta tag configured</li>
+<li>NFR-MOB-007: Mobile-friendly forms</li>
+<li>NFR-MOB-008: Tap targets spaced appropriately</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong> - Google Mobile-Friendly Test:
+Pass - Mobile usability issues: 0 - Touch targets meet minimum size - No
+horizontal scrolling required</p>
+<hr />
+<h1 id="content-requirements">6. Content Requirements</h1>
+<h2 id="homepage-content">6.1 Homepage Content</h2>
+<p><strong>Required Elements:</strong> - Hero section with tagline -
+Company introduction (100-150 words) - Featured portfolio items (3-6
+projects) - Service overview with links - Call-to-action sections -
+Contact information in footer</p>
+<h2 id="portfolio-content">6.2 Portfolio Content</h2>
+<p><strong>Per Project:</strong> - Project title - Category/tags -
+High-quality images (minimum 1920x1080) - Project description (50-200
+words) - Client name (if permitted) - Completion date -
+Technologies/techniques used</p>
+<p><strong>Content Guidelines:</strong> - Professional
+photography/screenshots - Consistent image aspect ratios - Compelling
+project descriptions - SEO-optimized titles and descriptions</p>
+<h2 id="services-content">6.3 Services Content</h2>
+<p><strong>Required Information:</strong> - Service name and description
+- Process overview - Deliverables - Technologies and tools - Example
+projects - FAQ section - Contact CTA</p>
+<h2 id="about-us-content">6.4 About Us Content</h2>
+<p><strong>Required Sections:</strong> - Company history (200-300 words)
+- Mission statement - Team profiles (optional) - Awards and recognition
+- Client testimonials - Company values - Contact information</p>
+<h2 id="seo-and-metadata">6.5 SEO and Metadata</h2>
+<p><strong>Requirements:</strong> - FR-SEO-001: Unique page titles
+(50-60 characters) - FR-SEO-002: Meta descriptions (150-160 characters)
+- FR-SEO-003: Open Graph tags for social sharing - FR-SEO-004:
+Structured data markup (Schema.org) - FR-SEO-005: XML sitemap -
+FR-SEO-006: Robots.txt file - FR-SEO-007: Canonical URLs - FR-SEO-008:
+Alt text for images</p>
+<hr />
+<h1 id="success-metrics-and-kpis">7. Success Metrics and KPIs</h1>
+<h2 id="business-metrics">7.1 Business Metrics</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Metric</strong></th>
+<th><strong>Target</strong></th>
+<th><strong>Measurement Method</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lead Generation</td>
+<td>10+ inquiries/month</td>
+<td>Contact form submissions</td>
+</tr>
+<tr>
+<td>Engagement Rate</td>
+<td>3+ pages/session</td>
+<td>Google Analytics</td>
+</tr>
+<tr>
+<td>Portfolio Views</td>
+<td>500+ views/month</td>
+<td>Page analytics</td>
+</tr>
+<tr>
+<td>Conversion Rate</td>
+<td>5% visitors to leads</td>
+<td>Form submissions / visitors</td>
+</tr>
+<tr>
+<td>Return Visitors</td>
+<td>20% of total traffic</td>
+<td>Google Analytics</td>
+</tr>
+</tbody>
+</table>
+<h2 id="technical-metrics">7.2 Technical Metrics</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Metric</strong></th>
+<th><strong>Target</strong></th>
+<th><strong>Measurement Method</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Page Load Speed</td>
+<td>&lt; 3 seconds</td>
+<td>Google PageSpeed Insights</td>
+</tr>
+<tr>
+<td>Mobile Traffic</td>
+<td>&gt; 40% of total</td>
+<td>Google Analytics</td>
+</tr>
+<tr>
+<td>Bounce Rate</td>
+<td>&lt; 50%</td>
+<td>Google Analytics</td>
+</tr>
+<tr>
+<td>Error Rate</td>
+<td>&lt; 1%</td>
+<td>Error monitoring tools</td>
+</tr>
+<tr>
+<td>Uptime</td>
+<td>&gt; 99.9%</td>
+<td>Uptime monitoring</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-satisfaction-metrics">7.3 User Satisfaction Metrics</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Metric</strong></th>
+<th><strong>Target</strong></th>
+<th><strong>Measurement Method</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Net Promoter Score</td>
+<td>&gt; 50</td>
+<td>User surveys</td>
+</tr>
+<tr>
+<td>Task Completion Rate</td>
+<td>&gt; 90%</td>
+<td>User testing</td>
+</tr>
+<tr>
+<td>User Feedback</td>
+<td>&gt; 4.0/5.0</td>
+<td>Feedback forms</td>
+</tr>
+<tr>
+<td>Social Engagement</td>
+<td>100+ interactions/month</td>
+<td>Social media analytics</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="technical-constraints">8. Technical Constraints</h1>
+<h2 id="platform-constraints">8.1 Platform Constraints</h2>
+<p><strong>Google Sites Platform:</strong> - Limited custom backend
+functionality - No direct database access - Dependent on Google’s
+infrastructure - Limited server-side processing - Restricted to Google
+Sites templates and components</p>
+<h2 id="browser-support">8.2 Browser Support</h2>
+<p><strong>Minimum Browser Versions:</strong> - Chrome: Last 2 versions
+- Firefox: Last 2 versions - Safari: Last 2 versions - Edge: Last 2
+versions - Mobile Safari (iOS): Last 2 versions - Chrome Mobile
+(Android): Last 2 versions</p>
+<p><strong>Not Supported:</strong> - Internet Explorer (all versions) -
+Browsers older than 2 years</p>
+<h2 id="third-party-dependencies">8.3 Third-Party Dependencies</h2>
+<p><strong>Required Services:</strong> - Google Fonts - Google Analytics
+- Google Sites infrastructure - Google Drive (media storage)</p>
+<p><strong>Optional Services:</strong> - LinkedIn integration - Email
+service provider - Contact form backend</p>
+<hr />
+<h1 id="security-and-compliance">9. Security and Compliance</h1>
+<h2 id="security-requirements">9.1 Security Requirements</h2>
+<ul>
+<li>SEC-001: HTTPS encryption for all pages</li>
+<li>SEC-002: Secure form submission</li>
+<li>SEC-003: XSS protection</li>
+<li>SEC-004: CSRF protection</li>
+<li>SEC-005: Content Security Policy headers</li>
+<li>SEC-006: Secure cookie handling</li>
+<li>SEC-007: Regular security updates</li>
+</ul>
+<h2 id="privacy-and-data-protection">9.2 Privacy and Data
+Protection</h2>
+<ul>
+<li>PRIV-001: Privacy policy page</li>
+<li>PRIV-002: Cookie consent mechanism</li>
+<li>PRIV-003: GDPR compliance (if applicable)</li>
+<li>PRIV-004: Data retention policies</li>
+<li>PRIV-005: User data protection</li>
+<li>PRIV-006: Third-party data sharing disclosure</li>
+</ul>
+<h2 id="legal-requirements">9.3 Legal Requirements</h2>
+<ul>
+<li>LEGAL-001: Terms of service</li>
+<li>LEGAL-002: Copyright notices</li>
+<li>LEGAL-003: Client permission for portfolio items</li>
+<li>LEGAL-004: Image licensing compliance</li>
+<li>LEGAL-005: Trademark usage guidelines</li>
+</ul>
+<hr />
+<h1 id="project-timeline-and-phases">10. Project Timeline and
+Phases</h1>
+<h2 id="phase-1-planning-and-design-weeks-1-2">10.1 Phase 1: Planning
+and Design (Weeks 1-2)</h2>
+<p><strong>Deliverables:</strong> - Finalized PRD - Design mockups -
+Content strategy - Technical architecture</p>
+<p><strong>Milestones:</strong> - Stakeholder approval of PRD - Design
+review and approval - Content outline completed</p>
+<h2 id="phase-2-development-weeks-3-6">10.2 Phase 2: Development (Weeks
+3-6)</h2>
+<p><strong>Deliverables:</strong> - Homepage implementation - Portfolio
+pages - Services and About pages - Navigation and footer - Mobile
+responsiveness</p>
+<p><strong>Milestones:</strong> - Homepage review - Portfolio content
+uploaded - Internal testing completed</p>
+<h2 id="phase-3-testing-and-qa-weeks-7-8">10.3 Phase 3: Testing and QA
+(Weeks 7-8)</h2>
+<p><strong>Deliverables:</strong> - Cross-browser testing - Mobile
+device testing - Accessibility audit - Performance optimization -
+Content review</p>
+<p><strong>Milestones:</strong> - All tests passed - Accessibility
+compliance verified - Performance targets met</p>
+<h2 id="phase-4-launch-week-9">10.4 Phase 4: Launch (Week 9)</h2>
+<p><strong>Deliverables:</strong> - Production deployment - DNS
+configuration - Analytics setup - Launch announcement</p>
+<p><strong>Milestones:</strong> - Site live on production - Monitoring
+active - Stakeholder sign-off</p>
+<h2 id="phase-5-post-launch-ongoing">10.5 Phase 5: Post-Launch
+(Ongoing)</h2>
+<p><strong>Activities:</strong> - Performance monitoring - User feedback
+collection - Content updates - Bug fixes - Feature enhancements</p>
+<hr />
+<h1 id="risks-and-mitigation">11. Risks and Mitigation</h1>
+<h2 id="technical-risks">11.1 Technical Risks</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Risk</strong></th>
+<th><strong>Impact</strong></th>
+<th><strong>Probability</strong></th>
+<th><strong>Mitigation Strategy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Platform limitations</td>
+<td>Medium</td>
+<td>High</td>
+<td>Early prototype testing</td>
+</tr>
+<tr>
+<td>Performance issues</td>
+<td>High</td>
+<td>Medium</td>
+<td>Optimization from start</td>
+</tr>
+<tr>
+<td>Browser compatibility</td>
+<td>Medium</td>
+<td>Low</td>
+<td>Regular cross-browser testing</td>
+</tr>
+<tr>
+<td>Third-party service outage</td>
+<td>High</td>
+<td>Low</td>
+<td>Fallback mechanisms</td>
+</tr>
+</tbody>
+</table>
+<h2 id="business-risks">11.2 Business Risks</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Risk</strong></th>
+<th><strong>Impact</strong></th>
+<th><strong>Probability</strong></th>
+<th><strong>Mitigation Strategy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delayed content delivery</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Content deadline buffer</td>
+</tr>
+<tr>
+<td>Scope creep</td>
+<td>High</td>
+<td>Medium</td>
+<td>Strict change management</td>
+</tr>
+<tr>
+<td>Budget overrun</td>
+<td>High</td>
+<td>Low</td>
+<td>Regular budget reviews</td>
+</tr>
+<tr>
+<td>Missed launch date</td>
+<td>Medium</td>
+<td>Low</td>
+<td>Agile development approach</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-experience-risks">11.3 User Experience Risks</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Risk</strong></th>
+<th><strong>Impact</strong></th>
+<th><strong>Probability</strong></th>
+<th><strong>Mitigation Strategy</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Poor mobile experience</td>
+<td>High</td>
+<td>Medium</td>
+<td>Mobile-first design</td>
+</tr>
+<tr>
+<td>Accessibility issues</td>
+<td>High</td>
+<td>Low</td>
+<td>Regular accessibility audits</td>
+</tr>
+<tr>
+<td>Confusing navigation</td>
+<td>Medium</td>
+<td>Low</td>
+<td>User testing sessions</td>
+</tr>
+<tr>
+<td>Slow load times</td>
+<td>High</td>
+<td>Medium</td>
+<td>Performance optimization</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="future-enhancements">12. Future Enhancements</h1>
+<h2 id="phase-2-features-3-6-months-post-launch">12.1 Phase 2 Features
+(3-6 months post-launch)</h2>
+<ul>
+<li>Blog/news section for industry insights</li>
+<li>Client portal for project tracking</li>
+<li>Online booking/inquiry system</li>
+<li>Video showreel on homepage</li>
+<li>Multi-language support (Hindi, English)</li>
+<li>Advanced search functionality</li>
+<li>Newsletter subscription</li>
+</ul>
+<h2 id="phase-3-features-6-12-months-post-launch">12.2 Phase 3 Features
+(6-12 months post-launch)</h2>
+<ul>
+<li>Interactive portfolio with advanced filters</li>
+<li>Case study deep dives with metrics</li>
+<li>Team member profiles and bios</li>
+<li>Awards and press section</li>
+<li>Client testimonial videos</li>
+<li>Behind-the-scenes content</li>
+<li>Integration with social media feeds</li>
+</ul>
+<h2 id="long-term-vision-12-months">12.3 Long-Term Vision (12+
+months)</h2>
+<ul>
+<li>Custom CMS for easier content management</li>
+<li>E-commerce for merchandise or digital products</li>
+<li>Online collaboration tools for clients</li>
+<li>Virtual showroom or 3D experiences</li>
+<li>AI-powered project recommendations</li>
+<li>Integration with project management tools</li>
+</ul>
+<hr />
+<h1 id="appendices">13. Appendices</h1>
+<h2 id="glossary">13.1 Glossary</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Term</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CTA</td>
+<td>Call-to-Action: Button or link prompting user action</td>
+</tr>
+<tr>
+<td>CDN</td>
+<td>Content Delivery Network: Distributed server network</td>
+</tr>
+<tr>
+<td>WCAG</td>
+<td>Web Content Accessibility Guidelines</td>
+</tr>
+<tr>
+<td>SEO</td>
+<td>Search Engine Optimization</td>
+</tr>
+<tr>
+<td>KPI</td>
+<td>Key Performance Indicator</td>
+</tr>
+<tr>
+<td>UX</td>
+<td>User Experience</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>User Interface</td>
+</tr>
+<tr>
+<td>NFR</td>
+<td>Non-Functional Requirement</td>
+</tr>
+<tr>
+<td>FR</td>
+<td>Functional Requirement</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">13.2 References</h2>
+<ul>
+<li>WCAG 2.1 Guidelines: https://www.w3.org/WAI/WCAG21/quickref/</li>
+<li>Google PageSpeed Insights: https://pagespeed.web.dev/</li>
+<li>Google Sites Documentation: https://support.google.com/sites/</li>
+<li>Web Performance Best Practices: https://web.dev/performance/</li>
+</ul>
+<h2 id="document-history">13.3 Document History</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Version</strong></th>
+<th><strong>Date</strong></th>
+<th><strong>Author</strong></th>
+<th><strong>Changes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>April 2026</td>
+<td>Product Team</td>
+<td>Initial document creation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="approval">13.4 Approval</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Role</strong></th>
+<th><strong>Name</strong></th>
+<th><strong>Signature</strong></th>
+<th><strong>Date</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product Manager</td>
+<td>_____________</td>
+<td>_____________</td>
+<td>________</td>
+</tr>
+<tr>
+<td>Creative Director</td>
+<td>_____________</td>
+<td>_____________</td>
+<td>________</td>
+</tr>
+<tr>
+<td>Technical Lead</td>
+<td>_____________</td>
+<td>_____________</td>
+<td>________</td>
+</tr>
+<tr>
+<td>Executive Sponsor</td>
+<td>_____________</td>
+<td>_____________</td>
+<td>________</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Document Classification:</strong> Confidential - Internal Use
+Only</p>
+<p><strong>Distribution:</strong> Product Team, Development Team,
+Executive Leadership</p>
+<p><strong>Next Review Date:</strong> May 2026</p>
+<hr />
+<p><em>End of Document</em></p>
+</body>
+</html>
