@@ -27,9 +27,9 @@ const PRINCIPLES = [
 
 const TEAM = [
   { name: "Divay", role: "Founder, TMV", bio: "The vision behind TMV. Built the studio from the ground up with a belief that Indian storytelling deserves world-class production.", img: liveImg },
-  { name: "Raman Singh", role: "Director", bio: "Leads direction across TMV's commercial and original projects. Known for his eye for detail and instinct for the unexpected frame.", img: animImg },
-  { name: "Ujjwal", role: "Head of Growth", bio: "Drives TMV's reach and partnerships. Connects the studio's creative output with the audiences and brands that need it most.", img: vfxImg },
-  { name: "Hemanya Dua", role: "Leading Horror Content", bio: "The creative force behind Khooni Monday. Hemanya brings India's horror tradition to life with every episode she leads.", img: liveImg },
+  { name: "Raman Singh", role: "Co-Founder, TMV", bio: "Leads direction across TMV's commercial and original projects. Known for his eye for detail and instinct for the unexpected frame.", img: animImg },
+  { name: "Ujjwal", role: "Head of Growth, TMV", bio: "Drives TMV's reach and partnerships. Connects the studio's creative output with the audiences and brands that need it most.", img: vfxImg },
+  { name: "Hemanya Dua", role: "Leading Horror Con", bio: "The creative force behind Khooni Monday. Hemanya brings India's horror tradition to life with every episode she leads.", img: liveImg },
 ];
 
 function About() {
