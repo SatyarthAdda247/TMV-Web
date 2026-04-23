@@ -4,6 +4,7 @@ import animImg from "@/assets/cat-animation.jpg";
 import vfxImg from "@/assets/cat-vfx.jpg";
 import { SectionReveal } from "@/components/SectionReveal";
 import { ContactForm } from "@/components/ContactForm";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -90,24 +91,41 @@ function About() {
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {TEAM.map((m, i) => (
             <SectionReveal key={m.name} delay={i * 0.05}>
-              <article className="group hover-card rounded-sm">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-surface">
-                  <img
-                    src={m.img}
-                    alt={m.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
-                  <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-accent">
-                      {m.role}
-                    </p>
-                    <h3 className="mt-1 font-display text-2xl">{m.name}</h3>
+              <HoverCard openDelay={200} closeDelay={100}>
+                <HoverCardTrigger asChild>
+                  <article className="group hover-card rounded-sm cursor-pointer">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-surface">
+                      <img
+                        src={m.img}
+                        alt={m.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+                      <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                        <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-accent">
+                          {m.role}
+                        </p>
+                        <h3 className="mt-1 font-display text-2xl">{m.name}</h3>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm text-foreground/70 leading-relaxed">{m.bio}</p>
+                  </article>
+                </HoverCardTrigger>
+                <HoverCardContent
+                  side="top"
+                  className="w-72 border-border bg-surface/95 backdrop-blur-md p-5"
+                >
+                  <div className="flex items-start gap-4">
+                    <img src={m.img} alt={m.name} className="h-14 w-14 rounded-sm object-cover grayscale" />
+                    <div>
+                      <p className="font-display text-lg leading-tight">{m.name}</p>
+                      <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-accent mt-0.5">{m.role}</p>
+                      <p className="mt-2 text-xs text-foreground/70 leading-relaxed">{m.bio}</p>
+                    </div>
                   </div>
-                </div>
-                <p className="mt-4 text-sm text-foreground/70 leading-relaxed">{m.bio}</p>
-              </article>
+                </HoverCardContent>
+              </HoverCard>
             </SectionReveal>
           ))}
         </div>

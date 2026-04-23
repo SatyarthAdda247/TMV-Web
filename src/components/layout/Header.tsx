@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 const NAV = [
-  { to: "/", label: "Home" },
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/originals", label: "Originals" },
-  { to: "/khooni-monday", label: "Khooni Monday" },
-  { to: "/services", label: "Services" },
-  { to: "/about", label: "About" },
+  { to: "/", label: "Home", tip: "Back to the start" },
+  { to: "/portfolio", label: "Portfolio", tip: "Our selected work" },
+  { to: "/originals", label: "Originals", tip: "Films we made for ourselves" },
+  { to: "/khooni-monday", label: "Khooni Monday", tip: "India's horror anthology" },
+  { to: "/services", label: "Services", tip: "What we offer" },
+  { to: "/about", label: "About", tip: "The people behind TMV" },
 ] as const;
 
 export function Header() {
@@ -48,26 +49,30 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-1">
           {NAV.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              activeOptions={{ exact: item.to === "/" }}
-              className="px-4 py-2 text-sm uppercase tracking-wider font-display font-medium text-foreground/80 hover:text-foreground transition-colors relative"
-              activeProps={{ className: "text-foreground" }}
-            >
-              {({ isActive }) => (
-                <>
-                  {item.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-indicator"
-                      className="absolute left-3 right-3 -bottom-0.5 h-0.5 bg-primary"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
+            <Tooltip key={item.to}>
+              <TooltipTrigger asChild>
+                <Link
+                  to={item.to}
+                  activeOptions={{ exact: item.to === "/" }}
+                  className="px-4 py-2 text-sm uppercase tracking-wider font-display font-medium text-foreground/80 hover:text-foreground transition-colors relative"
+                  activeProps={{ className: "text-foreground" }}
+                >
+                  {({ isActive }) => (
+                    <>
+                      {item.label}
+                      {isActive && (
+                        <motion.span
+                          layoutId="nav-indicator"
+                          className="absolute left-3 right-3 -bottom-0.5 h-0.5 bg-primary"
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </>
                   )}
-                </>
-              )}
-            </Link>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>{item.tip}</TooltipContent>
+            </Tooltip>
           ))}
           <Link
             to="/about"

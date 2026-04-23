@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
+import { toast } from "sonner";
 import heroImg from "@/assets/hero.jpg";
 import animImg from "@/assets/cat-animation.jpg";
 import liveImg from "@/assets/cat-liveaction.jpg";
@@ -111,7 +112,10 @@ function Home() {
             </Link>
             <button
               type="button"
-              onClick={() => setReelOpen(true)}
+              onClick={() => {
+                setReelOpen(true);
+                toast("Loading showreel...", { duration: 2000 });
+              }}
               className="group inline-flex items-center gap-3 rounded-sm border border-border bg-background/30 backdrop-blur px-6 py-4 font-display text-sm font-semibold uppercase tracking-wider hover:border-primary transition-colors"
             >
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground">

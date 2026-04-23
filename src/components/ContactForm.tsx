@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Send, Check } from "lucide-react";
+import { toast } from "sonner";
 
 const SERVICES = ["Animation", "Live Action", "VFX & CGI", "Post", "Originals", "Other"] as const;
 const BUDGETS = ["Under 5L", "5L to 25L", "25L to 1Cr", "1Cr+"] as const;
@@ -30,6 +31,10 @@ export function ContactForm() {
     setTimeout(() => {
       setSending(false);
       setSent(true);
+      toast.success("Message sent!", {
+        description: "We'll get back to you within two working days.",
+        duration: 5000,
+      });
     }, 600);
   };
 

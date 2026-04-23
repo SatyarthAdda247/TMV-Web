@@ -1,7 +1,9 @@
 import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
-
+import { Toaster } from "sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MagneticCursor } from "@/components/MagneticCursor";
 
 function NotFoundComponent() {
   return (
@@ -32,7 +34,8 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <>
+    <TooltipProvider delayDuration={300}>
+      <MagneticCursor />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-sm"
@@ -44,6 +47,18 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
-    </>
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "oklch(0.16 0 0)",
+            border: "1px solid oklch(1 0 0 / 0.1)",
+            color: "oklch(0.98 0 0)",
+            fontFamily: "var(--font-body)",
+            borderRadius: "0.25rem",
+          },
+        }}
+      />
+    </TooltipProvider>
   );
 }
