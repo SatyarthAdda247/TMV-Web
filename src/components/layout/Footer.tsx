@@ -81,7 +81,7 @@ function SocialLink({ href, label, children }: { href: string; label: string; ch
       target="_blank"
       rel="noreferrer noopener"
       aria-label={label}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-border text-foreground/80 hover:border-primary hover:text-primary transition-colors"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-border text-foreground/80 hover:border-primary hover:text-primary transition-colors hover-glow"
     >
       {children}
     </a>
@@ -105,7 +105,7 @@ function ContactCard({
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
-      className="group flex items-center justify-between gap-4 rounded-sm border border-border bg-surface/50 backdrop-blur p-6 hover:border-primary transition-colors"
+      className="group flex items-center justify-between gap-4 rounded-sm border border-border bg-surface/50 backdrop-blur p-6 hover:border-primary transition-colors hover-card"
     >
       <div className="flex items-center gap-4">
         <span className="flex h-12 w-12 items-center justify-center rounded-sm bg-primary/10 text-primary">

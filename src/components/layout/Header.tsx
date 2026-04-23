@@ -72,7 +72,7 @@ export function Header() {
           <Link
             to="/about"
             hash="contact"
-            className="ml-3 inline-flex items-center justify-center rounded-sm bg-primary px-5 py-2.5 text-sm font-display font-semibold uppercase tracking-wider text-primary-foreground transition-transform hover:scale-[1.03]"
+            className="ml-3 inline-flex items-center justify-center rounded-sm bg-primary px-5 py-2.5 text-sm font-display font-semibold uppercase tracking-wider text-primary-foreground transition-transform hover:scale-[1.03] hover-press hover-glow"
           >
             Let's talk
           </Link>

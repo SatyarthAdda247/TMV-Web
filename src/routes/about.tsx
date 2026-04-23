@@ -90,7 +90,7 @@ function About() {
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {TEAM.map((m, i) => (
             <SectionReveal key={m.name} delay={i * 0.05}>
-              <article className="group">
+              <article className="group hover-card rounded-sm">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-surface">
                   <img
                     src={m.img}

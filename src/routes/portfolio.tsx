@@ -43,7 +43,7 @@ function PortfolioIndex() {
           <SectionReveal key={c.to}>
             <Link
               to={c.to}
-              className="group block border-b border-border bg-surface/30 hover:bg-surface transition-colors"
+              className="group block border-b border-border bg-surface/30 hover:bg-surface transition-colors hover-card"
             >
               <div className="mx-auto max-w-7xl px-6 lg:px-10 py-10 lg:py-14 grid lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-5 relative aspect-[16/10] overflow-hidden rounded-sm">

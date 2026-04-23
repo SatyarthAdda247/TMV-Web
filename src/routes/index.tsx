@@ -192,7 +192,7 @@ function Home() {
               <SectionReveal key={c.to} delay={i * 0.1}>
                 <Link
                   to={c.to}
-                  className="group block relative aspect-[3/4] overflow-hidden rounded-sm border border-border hover-lift"
+                  className="group block relative aspect-[3/4] overflow-hidden rounded-sm border border-border hover-lift hover-card hover-zoom"
                 >
                   <img
                     src={c.img}
