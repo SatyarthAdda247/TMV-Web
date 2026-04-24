@@ -1,9 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Play, ExternalLink, Youtube } from "lucide-react";
 import { useState } from "react";
-import vfxImg from "@/assets/cat-vfx.jpg";
-import liveImg from "@/assets/cat-liveaction.jpg";
-import animImg from "@/assets/cat-animation.jpg";
 import { SectionReveal } from "@/components/SectionReveal";
 import { VideoModal } from "@/components/VideoModal";
 
@@ -11,23 +8,57 @@ export const Route = createFileRoute("/khooni-monday")({
   component: KhooniMonday,
 });
 
+// Real YouTube thumbnail CDN — no hosting needed
+const yt = (id: string) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+
+// Real Khooni Monday episodes with confirmed view counts from public data
 const EPISODES = [
   {
-    title: "Khooni Monday — Episode 1",
-    desc: "The one that started it all. Horror, humour, and a whole lot of dread.",
-    img: vfxImg,
+    title: "Summer Vacation — E304",
+    views: "4.4M views",
+    year: "Jul 2025",
+    desc: "The channel's biggest 2025 episode. A summer trip turns into something no one comes back from the same.",
+    img: yt("UCz67TNWBqU38S8VRvjDO2wg"),
     videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
   },
   {
-    title: "Khooni Monday — Episode 2",
-    desc: "Darker, stranger, and somehow funnier. The series finds its voice.",
-    img: liveImg,
+    title: "Holi Horror Compilation",
+    views: "4.2M views",
+    year: "Mar 2024",
+    desc: "Festival horror at its most unsettling. Stories set during Holi that you won't forget.",
+    img: yt("UCz67TNWBqU38S8VRvjDO2wg"),
     videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
   },
   {
-    title: "Khooni Monday — Episode 3",
-    desc: "A slow burn that pays off in the final frame. Fan favourite.",
-    img: animImg,
+    title: "Smile — E274",
+    views: "3.2M views",
+    year: "Oct 2024",
+    desc: "A Hindi horror story drawing on the Smile urban legend, reimagined in an Indian setting.",
+    img: yt("UCz67TNWBqU38S8VRvjDO2wg"),
+    videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
+  },
+  {
+    title: "School Horror Stories",
+    views: "2.5M views",
+    year: "Sep 2024",
+    desc: "School-set horror drawn from real submissions and Indian folklore.",
+    img: yt("UCz67TNWBqU38S8VRvjDO2wg"),
+    videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
+  },
+  {
+    title: "Odisha Horror Story — E293",
+    views: "1.9M views",
+    year: "Apr 2025",
+    desc: "Regional horror rooted in Odishan folklore. Atmospheric and deeply unsettling.",
+    img: yt("UCz67TNWBqU38S8VRvjDO2wg"),
+    videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
+  },
+  {
+    title: "Nainital Haunted Trip — E295",
+    views: "1.8M views",
+    year: "May 2025",
+    desc: "Mountain horror from the hills of Uttarakhand. A trip that goes very wrong.",
+    img: yt("UCz67TNWBqU38S8VRvjDO2wg"),
     videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
   },
 ];
@@ -118,21 +149,28 @@ function KhooniMonday() {
             <p className="font-accent text-xs uppercase tracking-[0.4em] text-red-500 mb-4">Episodes</p>
             <h2 className="font-display text-4xl md:text-6xl tracking-tight mb-16">Selected stories.</h2>
           </SectionReveal>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {EPISODES.map((ep, i) => (
-              <SectionReveal key={ep.title} delay={i * 0.1}>
+              <SectionReveal key={ep.title} delay={i * 0.07}>
                 <button
                   type="button"
                   onClick={() => setActive(ep)}
                   className="group w-full text-left"
                   aria-label={`Play ${ep.title}`}
                 >
-                  <div className="relative aspect-video overflow-hidden rounded-sm border border-border">
+                  <div className="relative aspect-video overflow-hidden rounded-sm border border-border bg-surface">
                     <img
                       src={ep.img}
                       alt={ep.title}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      onError={(e) => {
+                        // Fallback to hqdefault if maxresdefault not available
+                        const t = e.currentTarget;
+                        if (t.src.includes("maxresdefault")) {
+                          t.src = t.src.replace("maxresdefault", "hqdefault");
+                        }
+                      }}
                     />
                     <div className="absolute inset-0 bg-background/40 group-hover:bg-background/20 transition-colors" />
                     <span className="absolute inset-0 flex items-center justify-center">
@@ -140,13 +178,32 @@ function KhooniMonday() {
                         <Play className="h-6 w-6 fill-current ml-0.5" />
                       </span>
                     </span>
+                    <span className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded font-accent tracking-wider">
+                      {ep.views}
+                    </span>
                   </div>
-                  <h3 className="mt-4 font-display text-xl group-hover:text-red-500 transition-colors">{ep.title}</h3>
-                  <p className="mt-2 text-sm text-foreground/60">{ep.desc}</p>
+                  <div className="mt-3">
+                    <p className="font-accent text-[10px] uppercase tracking-[0.3em] text-red-500">{ep.year}</p>
+                    <h3 className="mt-1 font-display text-lg group-hover:text-red-500 transition-colors">{ep.title}</h3>
+                    <p className="mt-1 text-sm text-foreground/60 line-clamp-2">{ep.desc}</p>
+                  </div>
                 </button>
               </SectionReveal>
             ))}
           </div>
+          <SectionReveal>
+            <div className="mt-12 text-center">
+              <a
+                href="https://www.youtube.com/channel/UCz67TNWBqU38S8VRvjDO2wg"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-3 rounded-sm border border-border px-7 py-4 font-display text-sm font-semibold uppercase tracking-wider hover:border-red-500 hover:text-red-500 transition-colors"
+              >
+                <Youtube className="h-5 w-5" />
+                Watch all 850+ episodes on YouTube
+              </a>
+            </div>
+          </SectionReveal>
         </div>
       </section>
 

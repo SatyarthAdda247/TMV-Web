@@ -28,10 +28,12 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+const KM_THUMB = "https://img.youtube.com/vi/UCz67TNWBqU38S8VRvjDO2wg/maxresdefault.jpg";
+
 const CATEGORIES = [
-  { to: "/portfolio/animation", title: "Animation", img: animImg, tag: "01" },
-  { to: "/portfolio/live-action", title: "Live Action", img: liveImg, tag: "02" },
-  { to: "/portfolio/vfx-cgi", title: "VFX & CGI", img: vfxImg, tag: "03" },
+  { to: "/portfolio/animation", title: "Animation", img: KM_THUMB, tag: "01" },
+  { to: "/portfolio/live-action", title: "Live Action", img: KM_THUMB, tag: "02" },
+  { to: "/portfolio/vfx-cgi", title: "VFX & CGI", img: KM_THUMB, tag: "03" },
 ] as const;
 
 const STATS = [

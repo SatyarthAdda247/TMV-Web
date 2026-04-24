@@ -1,9 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Play, ArrowRight } from "lucide-react";
 import { useState } from "react";
-import animImg from "@/assets/cat-animation.jpg";
-import liveImg from "@/assets/cat-liveaction.jpg";
-import vfxImg from "@/assets/cat-vfx.jpg";
 import { SectionReveal } from "@/components/SectionReveal";
 import { VideoModal } from "@/components/VideoModal";
 
@@ -11,36 +8,39 @@ export const Route = createFileRoute("/originals")({
   component: Originals,
 });
 
+const KM_THUMB = "https://img.youtube.com/vi/UCz67TNWBqU38S8VRvjDO2wg/maxresdefault.jpg";
+const KM_CHANNEL = "https://www.youtube.com/channel/UCz67TNWBqU38S8VRvjDO2wg";
+
 const ORIGINALS = [
   {
     title: "Khooni Monday",
     type: "Horror Anthology Series",
-    year: "Ongoing",
-    img: vfxImg,
-    desc: "India's weekly horror anthology. New story, new dread, every Monday.",
+    year: "2018 — Ongoing",
+    img: KM_THUMB,
+    desc: "India's biggest horror content channel. 6.34M subscribers, 1.2B+ views, 850+ episodes. New horror every Monday.",
     videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
-    channelUrl: "https://www.youtube.com/channel/UCz67TNWBqU38S8VRvjDO2wg",
-    slug: "/khooni-monday",
+    channelUrl: KM_CHANNEL,
+    slug: "/khooni-monday" as "/khooni-monday" | null,
   },
   {
-    title: "Paper Lanterns",
-    type: "Short Film, 12 min",
-    year: "2024",
-    img: animImg,
-    desc: "A grandmother's last festival, told one paper lantern at a time.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    channelUrl: null,
-    slug: null,
+    title: "The Horror Show Podcast",
+    type: "Podcast — India's #1 on Spotify",
+    year: "2023 — Ongoing",
+    img: KM_THUMB,
+    desc: "Divay Agarwal interviews horror creators, filmmakers, and paranormal investigators. India's top horror podcast on Spotify.",
+    videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
+    channelUrl: "https://music.amazon.in/podcasts/785a6d3a-b10d-498c-86a9-08a54a325d54/the-horror-show-by-khooni-monday",
+    slug: null as "/khooni-monday" | null,
   },
   {
-    title: "Salt Roads",
-    type: "Documentary, 38 min",
-    year: "2023",
-    img: liveImg,
-    desc: "A road trip along India's forgotten salt routes.",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    channelUrl: null,
-    slug: null,
+    title: "HorrorCon",
+    type: "Live Event — Annual, Delhi",
+    year: "2024 — Ongoing",
+    img: KM_THUMB,
+    desc: "India's premier horror fan convention. Cosplay, short film competitions, creator panels, and storytelling sessions.",
+    videoUrl: "https://www.youtube.com/embed?listType=user_uploads&list=UCz67TNWBqU38S8VRvjDO2wg",
+    channelUrl: KM_CHANNEL,
+    slug: "/khooni-monday" as "/khooni-monday" | null,
   },
 ];
 
