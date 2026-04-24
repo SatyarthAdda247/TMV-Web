@@ -90,10 +90,23 @@ function KhooniMonday() {
               <span className="text-red-500"> Rooted in India, universal in dread.</span>
             </h2>
             <p className="mt-6 text-lg text-foreground/70">
-              Khooni Monday is TMV's flagship original horror anthology. Each episode is a standalone story
-              drawing from Indian folklore, urban legends, and the quiet terror of everyday life.
-              New episodes drop every Monday on our YouTube channel.
+              Khooni Monday is TMV's flagship original horror anthology — India's biggest horror content channel with <strong className="text-foreground">6.34M subscribers</strong> and <strong className="text-foreground">1.2 billion+ views</strong>. Launched in August 2018, the channel has published 850+ episodes drawing from Indian mythology, folklore, urban legends, and the quiet terror of everyday life.
             </p>
+            <p className="mt-4 text-lg text-foreground/70">
+              New episodes drop every Monday. We also run <strong className="text-foreground">The Horror Show by Khooni Monday</strong> — India's #1 horror podcast on Spotify — and host <strong className="text-foreground">HorrorCon</strong>, India's premier annual horror fan event in Delhi.
+            </p>
+            <div className="mt-8 grid grid-cols-3 gap-6">
+              {[
+                { v: "6.34M", l: "Subscribers" },
+                { v: "1.2B+", l: "Total views" },
+                { v: "850+", l: "Episodes" },
+              ].map(s => (
+                <div key={s.l} className="border-l border-red-500/40 pl-4">
+                  <p className="font-display text-3xl text-red-500">{s.v}</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{s.l}</p>
+                </div>
+              ))}
+            </div>
           </SectionReveal>
         </div>
       </section>
@@ -134,6 +147,45 @@ function KhooniMonday() {
               </SectionReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* HORRORCON */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-10 py-20 lg:py-28">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <SectionReveal className="lg:col-span-5">
+            <p className="font-accent text-xs uppercase tracking-[0.4em] text-red-500 mb-4">Live event</p>
+            <h2 className="font-display text-4xl md:text-6xl tracking-tight">HorrorCon.</h2>
+            <p className="mt-6 text-lg text-foreground/70">
+              India's premier horror fan convention, held annually in Delhi. Horror creators, filmmakers, cosplayers, and fans — all under one roof. The 2nd edition took place on October 25–26, 2025.
+            </p>
+            <p className="mt-4 text-foreground/70">
+              Featuring storytelling sessions, horror cosplay competitions, short film screenings, and panels with India's top horror content creators.
+            </p>
+            <a
+              href="https://www.youtube.com/channel/UCz67TNWBqU38S8VRvjDO2wg"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-display uppercase tracking-wider text-red-500 hover:underline"
+            >
+              Follow for HorrorCon 2026 updates <ExternalLink className="h-4 w-4" />
+            </a>
+          </SectionReveal>
+          <SectionReveal delay={0.1} className="lg:col-span-7">
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { v: "2nd", l: "Edition (2025)" },
+                { v: "Delhi", l: "Location" },
+                { v: "2 days", l: "Duration" },
+                { v: "Annual", l: "Frequency" },
+              ].map(s => (
+                <div key={s.l} className="border border-border rounded-sm p-6 bg-surface/50 hover-card">
+                  <p className="font-display text-4xl text-red-500">{s.v}</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground mt-2">{s.l}</p>
+                </div>
+              ))}
+            </div>
+          </SectionReveal>
         </div>
       </section>
 

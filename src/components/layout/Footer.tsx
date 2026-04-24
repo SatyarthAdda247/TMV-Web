@@ -2,6 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { Linkedin, Mail, Phone, ArrowUpRight, Instagram, Youtube, Twitter } from "lucide-react";
 import heroBg from "@/assets/hero.jpg";
 
+const SOCIALS = [
+  { href: "https://www.youtube.com/channel/UCz67TNWBqU38S8VRvjDO2wg", label: "Khooni Monday YouTube", icon: <Youtube className="h-5 w-5" />, tag: "KM" },
+  { href: "https://in.linkedin.com/company/themadvirus", label: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, tag: "LI" },
+  { href: "https://instagram.com/themadvirus", label: "Instagram", icon: <Instagram className="h-5 w-5" />, tag: "IG" },
+  { href: "https://twitter.com/themadvirus", label: "Twitter / X", icon: <Twitter className="h-5 w-5" />, tag: "TW" },
+];
+
 export function Footer() {
   return (
     <footer
@@ -28,19 +35,12 @@ export function Footer() {
               Animation, live action, VFX, CGI. Wherever your story lives, we have the craft to bring it to screen.
             </p>
 
-            <div className="mt-10 flex items-center gap-3">
-              <SocialLink href="https://in.linkedin.com/company/themadvirus" label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </SocialLink>
-              <SocialLink href="https://instagram.com/themadvirus" label="Instagram">
-                <Instagram className="h-5 w-5" />
-              </SocialLink>
-              <SocialLink href="https://youtube.com/@themadvirus" label="YouTube">
-                <Youtube className="h-5 w-5" />
-              </SocialLink>
-              <SocialLink href="https://twitter.com/themadvirus" label="Twitter">
-                <Twitter className="h-5 w-5" />
-              </SocialLink>
+            <div className="mt-10 flex items-center gap-3 flex-wrap">
+              {SOCIALS.map(s => (
+                <SocialLink key={s.href} href={s.href} label={s.label}>
+                  {s.icon}
+                </SocialLink>
+              ))}
             </div>
           </div>
 

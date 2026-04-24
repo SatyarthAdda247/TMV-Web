@@ -27,10 +27,10 @@ const PRINCIPLES = [
 ];
 
 const TEAM = [
-  { name: "Divay", role: "Founder, TMV", bio: "The vision behind TMV. Built the studio from the ground up with a belief that Indian storytelling deserves world-class production.", img: liveImg },
-  { name: "Raman Singh", role: "Co-Founder, TMV", bio: "Leads direction across TMV's commercial and original projects. Known for his eye for detail and instinct for the unexpected frame.", img: animImg },
-  { name: "Ujjwal", role: "Head of Growth, TMV", bio: "Drives TMV's reach and partnerships. Connects the studio's creative output with the audiences and brands that need it most.", img: vfxImg },
-  { name: "Hemanya Dua", role: "Leading Horror Con", bio: "The creative force behind Khooni Monday. Hemanya brings India's horror tradition to life with every episode she leads.", img: liveImg },
+  { name: "Divay Agarwal", role: "Co-Founder, TMV", bio: "Started visiting Delhi's haunted sites at 15. Co-founded Khooni Monday at 26 after spotting a gap in India's horror content landscape. Now leads TMV's creative vision and the HorrorCon event IP.", img: liveImg },
+  { name: "Raman Bhalla", role: "Co-Founder, TMV", bio: "The marketing and performance-led storytelling brain behind TMV. Drives brand partnerships with Netflix, Amazon, Krafton and more. Based in Mumbai.", img: animImg },
+  { name: "Ujjwal", role: "Head of Growth", bio: "Connects TMV's creative output with the right audiences and brand partners. Leads growth strategy across platforms and channels.", img: vfxImg },
+  { name: "Hemanya Dua", role: "Leading Horror Con", bio: "Leads HorrorCon — India's premier horror fan event held annually in Delhi. Brings together horror creators, filmmakers, cosplayers and fans under one roof.", img: liveImg },
 ];
 
 function About() {
@@ -66,13 +66,13 @@ function About() {
             </h2>
             <div className="mt-8 space-y-5 text-lg text-foreground/75 leading-relaxed">
               <p>
-                TMV Studios is a small, tight team of directors, animators, technical artists and
-                producers. We've spent the last decade making films, commercials and original content
-                for brands and broadcasters across the world.
+                TMV (The Mad Virus) is a creative agency founded by Divay Agarwal and Raman Bhalla, based in Mumbai and Delhi. What started as an animation studio in 2019 has grown into a full-fledged production and creative powerhouse.
               </p>
               <p>
-                We believe the future of storytelling is collaborative, hybrid and unapologetically
-                ambitious. Animation, live action, VFX. The lines blur, and that's the point.
+                We own and run multiple YouTube channels — our biggest property, Khooni Monday, has 6.34M subscribers and 1.2B+ views. We also run India's #1 horror podcast on Spotify: The Horror Show by Khooni Monday. Our community spans 10M+ followers across platforms.
+              </p>
+              <p>
+                We partner with brands like Netflix, Amazon, Prime Video, JioHotstar, Krafton, HDFC Bank, Casio, Lenskart, Delhivery, and Hell Energy.
               </p>
             </div>
           </SectionReveal>

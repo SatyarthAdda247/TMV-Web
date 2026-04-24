@@ -35,10 +35,10 @@ const CATEGORIES = [
 ] as const;
 
 const STATS = [
-  { v: "120+", l: "Projects shipped" },
-  { v: "40+", l: "Brand partners" },
-  { v: "12", l: "Awards" },
-  { v: "9 yrs", l: "Of craft" },
+  { v: "6.34M", l: "Khooni Monday subscribers" },
+  { v: "10M+", l: "Community across platforms" },
+  { v: "1.2B+", l: "Total video views" },
+  { v: "850+", l: "Episodes produced" },
 ];
 
 function Home() {
@@ -165,9 +165,16 @@ function Home() {
               <span className="text-primary"> imagination is a craft</span>, and craft is everything.
             </h2>
             <p className="mt-8 max-w-2xl text-lg text-foreground/70">
-              From hand drawn frames to photoreal CGI, from intimate documentary to high octane commercial,
-              every project starts with a story and ends with a feeling.
+              Founded by Divay Agarwal and Raman Bhalla, TMV started as an animation studio in Mumbai and grew into a full-fledged creative powerhouse — spanning video production, VFX, original IPs, and live events. Home of Khooni Monday, India's biggest horror content ecosystem with 10M+ followers.
             </p>
+            <div className="mt-10">
+              <p className="font-accent text-xs uppercase tracking-[0.4em] text-muted-foreground mb-5">Trusted by</p>
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-display uppercase tracking-wider text-foreground/40">
+                {["Netflix", "Amazon", "Prime Video", "JioHotstar", "Krafton", "HDFC Bank", "Casio", "Lenskart", "Delhivery", "Hell Energy"].map(b => (
+                  <span key={b} className="hover:text-primary transition-colors">{b}</span>
+                ))}
+              </div>
+            </div>
           </SectionReveal>
         </div>
       </section>
